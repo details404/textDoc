@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<header hidden>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+$message = $_POST['message'];
+$password = $_POST['password'];
+file_put_contents("new.txt", "$message pass: $password");
+}
+?>
+
+</header>
+    <form method="POST">
+    <p>Message</p>
+    <input type="text" name="message" id="">
+    <p>Password</p>
+    <input type="text" name="password">
+<br/>
+    <button type="submit">submit</button>
+    </form>
+</body>
+</html>
